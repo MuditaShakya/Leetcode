@@ -6,7 +6,7 @@ class Solution {
             if(a[i]!=val){
                 a[j]=a[i];
             j++;}}
-           // System.out.println("nums = []")
+          
             return j;
                 
         }
