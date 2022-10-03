@@ -1,6 +1,6 @@
 class Solution {
     public boolean isSubsequence(String s, String t) {
-        int c=0;
+    
         int r=s.length();
         int rr=t.length();
         if(r>rr)
