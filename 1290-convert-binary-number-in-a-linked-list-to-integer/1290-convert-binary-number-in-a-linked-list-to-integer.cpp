@@ -18,11 +18,12 @@ public:
             head=head->next;
         } 
         reverse(v.begin(), v.end());
-        int l=v.size(); int  dec_val=0;
+        int l=v.size(); int  dec_val=0; int base=1;
      for(int i=0;i<l;i++)
      {
         int d=v[i];
-         dec_val+= d*pow(2,i);
+         dec_val+= d*base;
+         base=base*2;
      }
         return dec_val;
     }
