@@ -25,4 +25,4 @@ public:
         preorder(root->left, ans);
         preorder(root->right, ans);
     }
-};
+}; // remember & lagana is also very important. iske bina ans nahi aa raha tha.
