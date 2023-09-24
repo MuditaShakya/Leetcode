@@ -23,7 +23,6 @@ public:
         if(root==NULL) return NULL;
         if(root->left==NULL && root->right==NULL)
             return NULL;
-       // if(root->left==NULL && root->right!=NULL) root=root->right;
         if(root->left==NULL) return NULL;
         while(root->left!=NULL)
         {
