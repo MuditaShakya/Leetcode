@@ -35,7 +35,7 @@ public:
             return NULL;
          if(root1==NULL && root2!=NULL) return root2;
              if(root1!=NULL && root2==NULL) return root1;
-          //if(root1->left==NULL && root2->left==NULL && root1->right==NULL && root2->right==NULL) return NULL;
+
         
          
          if(root1->left==NULL && root2->left!=NULL)
