@@ -1,26 +1,16 @@
-
 class Solution {
 public:
-    int maxSubArray(vector<int>& n) {
-        int csum=n[0];
-        int osum=n[0];
-        int i=1;
-        while(i<n.size())
+    int maxSubArray(vector<int>& a) {
+        int sum=0;
+        int ans=a[0];
+        for(int i=0;i<a.size();i++)
         {
-            if(csum>0)
-            {
-                csum=csum+n[i];
-            }
-                else
-                    csum=n[i];
-            if(csum>osum)
-                osum=csum;
-            i++;
+            sum=sum+a[i];
+            if(sum>ans)
+                ans=sum;
+            if(sum<0)
+                sum=0;
         }
-        return osum;
+        return ans;
     }
 };
-
-
-
-
