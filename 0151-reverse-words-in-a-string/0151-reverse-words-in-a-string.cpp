@@ -1,39 +1,33 @@
+#include <string>
+
 class Solution {
 public:
-    string reverseWords(string s) {
-        stack<string> st;
-        string word="";
-        char c;
-        int i=0;
-        s=s+" ";
-        while(i<s.size())
-        {
-            if(s[i]!=' ')
-            {
-                word=word+s[i];
+    std::string reverseWords(std::string s) {
+        std::string ans = "";
+        std::string word = "";
+        int n = s.size();
+        for (int i = 0; i < n; i++) {
+            if (s[i] != ' ') {
+                word += s[i];
+            } else {
+                if (!word.empty()) {
+                    if (!ans.empty()) {
+                        ans = word + " " + ans;
+                    } else {
+                        ans = word;
+                    }
+                    word = "";
+                }
             }
-            else{
-                if(word!="")
-                st.push(word);
-                word="";
+        }
+        // Add the last word (if any) to the beginning of the result
+        if (!word.empty()) {
+            if (!ans.empty()) {
+                ans = word + " " + ans;
+            } else {
+                ans = word;
             }
-            i++;
         }
-        string ans="";
-        while(!st.empty())
-        {
-            string w=st.top();
-            ans+=w;
-            
-            st.pop();
-            if(!st.empty())
-            ans+=" ";
-        }
-        int t=ans.size();
-        if(ans[0]==' ')
-            ans.erase(0);
-        if(ans[t-1]==' ')
-            ans.erase(t-1);
         return ans;
     }
 };
