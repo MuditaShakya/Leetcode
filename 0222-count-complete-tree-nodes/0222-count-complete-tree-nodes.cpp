@@ -10,37 +10,14 @@
  * };
  */
 class Solution {
-    
 public:
     int countNodes(TreeNode* root) {
-    if(root==NULL)
-    return 0;
-      int res;
-    int lh=findleft(root);
-    int rh=findright(root);
-    if(lh==rh)
-    return (1<<lh)-1;
+        if(root==NULL)
+            return 0;
+         else if(root->left==NULL && root->right==NULL)
+             return 1;
+        else return (1+countNodes(root->left)+countNodes(root->right));
 
-    return 1+ countNodes(root->right)+countNodes(root->left);
+        
     }
-    
-    int findleft(TreeNode* root) {
-        int a=0;
-        while(root!=NULL){
-            a++;
-        root=root->left;
-        }
-        return a;
-    }
-
- int findright(TreeNode* root) {
-        int a=0;
-        while(root!=NULL){
-            a++;
-        root=root->right;
-        }
-        return a;
-    }
-
-    
 };
