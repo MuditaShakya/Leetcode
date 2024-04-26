@@ -1,28 +1,39 @@
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
 class Solution {
 public:
     ListNode* reverseBetween(ListNode* head, int l, int r) {
-        if (!head || l == r) // Edge cases: empty list or no reversal needed
-            return head;
-
-        ListNode* dummy = new ListNode(0);
-        dummy->next = head;
-        ListNode* prev = dummy;
-
-        // Move prev to the node before the sublist to be reversed
-        for (int i = 0; i < l - 1; ++i)
-            prev = prev->next;
-
-        ListNode* curr = prev->next;
-        ListNode* next = nullptr;
-
-        // Reverse the sublist from l to r
-        for (int i = 0; i < r - l; ++i) {
-            next = curr->next;
-            curr->next = next->next;
-            next->next = prev->next;
-            prev->next = next;
+        ListNode* dummy=new ListNode(0);
+        dummy->next=head;
+        ListNode* leftprev=dummy;
+        ListNode* curr=head;
+        
+        for(int i=0;i<l-1;i++)
+        {
+            leftprev=curr;
+            curr=curr->next;
+            
+            
         }
-
+        ListNode* prev=NULL;
+        ListNode* temp;
+        for(int i=0;i<r-l+1;i++)
+        {
+            temp=curr->next;
+            curr->next=prev;
+            prev=curr;
+            curr=temp;
+        }
+        leftprev->next->next=curr;
+        leftprev->next=prev;
         return dummy->next;
     }
 };
