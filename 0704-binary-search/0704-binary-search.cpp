@@ -1,24 +1,26 @@
 class Solution {
 public:
-    int search(vector<int>& n, int t) {
-        int l=0;
-        int r=n.size()-1;
-        if(n.size()==1)
+    int search(vector<int>& a, int t) {
+        int n=a.size();
+       
+        int l=0, r=n-1;
+         int mid=(l+r)/2;
+        if(a.size()==1)
         {
-            if(n[0]==t)
+            if(a[0]==t)
                 return 0;
         }
         while(l<=r)
         {
-            int mid=(l+r)/2;
-            if(n[mid]==t)
+            mid=(l+r)/2;
+            if(a[mid]==t)
                 return mid;
-            else if(n[mid]>t)
+            else if(a[mid]>t)
                 r=mid-1;
-            else 
+            else
                 l=mid+1;
-            
         }
         return -1;
+        
     }
 };
