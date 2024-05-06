@@ -1,6 +1,7 @@
 class Solution {
 public:
     int findMin(vector<int>& n) {
+        
         int N=n.size();
         int start=0, end=n.size()-1;
         if(n[end]>=n[0]) return n[0];
@@ -17,7 +18,7 @@ public:
             else
                 end=mid-1;
         }
-        
-        return -1;
+        return(-1);
+    
     }
 };
