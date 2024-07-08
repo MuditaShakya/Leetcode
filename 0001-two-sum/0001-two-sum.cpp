@@ -1,22 +1,20 @@
 class Solution {
 public:
-    vector<int> twoSum(vector<int>& a, int t) {
+    vector<int> twoSum(vector<int>& a, int target) {
         map<int, int> mp;
         vector<int> v;
-        int n=a.size();
-        for(int i=0;i<n;i++)
+        for(int i=0;i<a.size();i++)
         {
-            int r=t-a[i];
-            if(mp.count(r))
+          int t=target-a[i];
+            if(mp.count(t))
             {
                 v.push_back(i);
-                v.push_back(mp[r]);
+                v.push_back(mp[t]);
                 break;
             }
             mp[a[i]]=i;
         }
         return v;
+        
     }
 };
-
-// if element exists in map then return element else store it in map
