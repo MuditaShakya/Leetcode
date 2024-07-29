@@ -9,7 +9,7 @@
 class Solution {
 public:
     void deleteNode(ListNode* n) {
-    // store the value ofnext node in node itself.
+    // store the value of next node in node itself.
         ListNode* n2=n->next;
         n->val=n2->val;
         n->next=n2->next;
