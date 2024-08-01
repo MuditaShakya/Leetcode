@@ -6,7 +6,7 @@ public:
         {
             char tens=it[11];
             char ones=it[12];
-            if(tens>'5' && ones>'0' || tens>'6')
+            if(tens=='6' && ones>'0' || tens>'6')
                 c++;
         }
         return c;
