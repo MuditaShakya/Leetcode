@@ -13,7 +13,7 @@ public:
     ListNode* sortList(ListNode* head) {
        if(head==NULL) return NULL;
     ListNode* t=head;
-        vector<int> v;
+        vector<int> v;          //store numbers in vector, sort, store in new ll.
         while(t!=NULL)
         {
             v.push_back(t->val);
